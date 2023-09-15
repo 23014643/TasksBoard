@@ -29,8 +29,11 @@ public class Login {
     public String loginUser(String username, String password) {
         for (User user : users) {
             if (user.userName.equals(username) && user.password.equals(password)) {
+                Task task  = new Task();
+                task.showWindow();
                 return "Welcome " + user.firstName + " " + user.lastName + "! It is great to see you again.";
             }
+
         }
         return "Username or password incorrect, please try again.";
     }
